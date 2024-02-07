@@ -257,7 +257,7 @@ function toStringList(arr) {
  *   distinct([]) => []
  */
 function distinct(arr) {
-  return arr.filter((_, i) => arr.indexOf(_) === i);
+  return Array.from(new Set(arr));
 }
 
 /**
