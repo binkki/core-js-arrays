@@ -273,15 +273,8 @@ function distinct(arr) {
  *    createNDimensionalArray(4, 2) => [[[[0, 0], [0, 0]], [[0, 0], [0, 0]]], [[[0, 0], [0, 0]], [[0, 0], [0, 0]]]]
  *    createNDimensionalArray(1, 1) => [0]
  */
-function unflat(arr, size, depth) {
-  if (depth !== 0) {
-    return unflat(new Array(size).fill(arr), size, depth - 1);
-  }
-  return arr;
-}
-
 function createNDimensionalArray(n, size) {
-  return unflat(0, size, n);
+  return new Array(n).fill(1).reduce((a) => new Array(size).fill(a), 0);
 }
 
 /**
